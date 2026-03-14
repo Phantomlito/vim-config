@@ -1,5 +1,4 @@
 " BASIC -----------------------------------------
-
 set nocompatible
 source $VIMRUNTIME/defaults.vim
 
@@ -33,9 +32,19 @@ set smartcase
 set incsearch
 set hlsearch
 
+
 " EDITING ---------------------------------------
 
 set backspace=indent,eol,start
+
+" Clipboard settings
+if has("mac") || has("macunix")
+    " macOS system clipboard
+    set clipboard=unnamed
+elseif has("unix")
+    " Linux system clipboard
+    set clipboard=unnamedplus
+endif
 
 " MAPPINGS --------------------------------------
 
