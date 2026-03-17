@@ -13,6 +13,12 @@ set relativenumber
 set cursorline
 set scrolloff=8
 
+" Always show status line
+set laststatus=2
+" Show full path of file in status line
+set statusline=%F
+
+
 " INDENTATION -----------------------------------
 
 set tabstop=4
@@ -76,3 +82,5 @@ nnoremap <C-k> <C-w>k
 " FILETYPE RULES ---------------------------------------------------
 
 autocmd FileType c,cpp,java setlocal formatoptions+=cro
+
+nnoremap <leader>f :%!clang-format -style=file<CR>
